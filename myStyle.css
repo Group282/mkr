@@ -1,0 +1,130 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.grid-wrapper{
+    display: grid;
+    height: 100vh;
+}
+.item{
+    border: 1px solid #eee;
+}
+.grid-item{
+    width: 100%;
+    min-height: 100px;
+    height: 100%;
+    padding: 3px;
+}
+.grid-item:nth-child(1){
+    grid-area: a;
+    background-color: #376aec;
+}.grid-item:nth-child(2){
+     grid-area: b;
+     background-color: rgb(137, 137, 137);
+ }.grid-item:nth-child(3){
+      height: 100%;
+      grid-area: c;
+      background-color: rgb(208, 208, 208);
+  }.grid-item:nth-child(4){
+       grid-area: d;
+       background-color: rgb(222, 81, 41);
+   }.grid-item:nth-child(5){
+        background-color: rgb(102, 213, 96);
+    }.grid-item:nth-child(6){
+         background-color: rgb(169, 145, 67);
+     }.grid-item:nth-child(7){
+          background-color: rgb(228, 135, 118);
+      }
+.grid-float{
+    /* display: inline; */
+}
+.grid-item-float:first-child{
+    float: right;
+    background-color: rgb(255, 202, 2);
+    width: 30%;
+    height: 100%;
+}.grid-item-float:last-child{
+     /* float: right; */
+     width: 70%;
+     height: 100%;
+     background-color: rgb(0, 0, 0);
+ }
+.grid-flexbox{
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+}
+.grid-item-flex:first-child{
+    background-color: rgb(98, 193, 167);
+    width: 100%;
+    height: 100%;
+}.grid-item-flex:last-child{
+     width: 100%;
+     height: 100%;
+     background-color: rgb(52, 193, 83);
+ }
+.grid-flex-row{
+    display: flex;
+    flex-direction: row;
+}
+.grid-item-flexitem:first-child{
+    background-color: rgb(167, 232, 213);
+    width: 100%;
+    height: 100%;
+}.grid-item-flexitem:last-child{
+     width: 100%;
+     height: 100%;
+     background-color: rgb(241, 51, 84);
+ }
+@media screen and (min-width: 1200px) {
+
+    .grid-wrapper{
+        grid-template-areas: "a a a b"
+                         "c c c b"
+                         "d d d d";
+    }
+}
+
+@media screen and (min-width: 950px) and (max-width: 1200px) {
+
+    .grid-wrapper{
+        grid-template-areas: "a a a b"
+                         "c c c b"
+                         "d d d d";
+    }
+}
+
+@media screen and (min-width: 750px) and (max-width: 950px) {
+
+    .grid-wrapper{
+        grid-template-areas: "a a a b"
+                         "c c c b"
+                         "d d d d";
+    }
+}
+@media screen and (min-width: 500px) and (max-width: 750px) {
+
+    .grid-wrapper{
+        grid-template-areas: "a a a "
+                         "b b b "
+                         "c c c "
+                         "c c c "
+                         "d d d ";
+    }
+
+}
+@media screen and (max-width: 500px) {
+
+    .grid-wrapper{
+        grid-template-areas: "a a a "
+                         "b b b "
+                         "c c c "
+                         "c c c "
+                         "d d d ";
+    }
+    .grid-flex-row {
+        display: flex;
+        flex-direction: column;
+    }
+}
