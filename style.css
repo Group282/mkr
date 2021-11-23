@@ -1,0 +1,132 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.STR-grid-wrapper{
+    display: grid;
+    height: 100vh;
+}
+.grid-item{
+    /* margin: 3px; */
+    border: 1px solid #ffffff;
+}
+.STR-grid-item{
+    width: 100%;
+    min-height: 100px;
+    height: 100%;
+    padding: 3px;
+}
+.STR-grid-item:nth-child(1){
+    grid-area: a;
+    background-color: #0375ee;
+}.STR-grid-item:nth-child(2){
+    grid-area: b;
+    background-color: rgb(66, 68, 79);
+}.STR-grid-item:nth-child(3){
+    height: 100%;
+    grid-area: c;
+    background-color: rgb(255, 255, 255);
+}.STR-grid-item:nth-child(4){
+    grid-area: d;
+    background-color: rgb(255, 101, 0);
+}.STR-grid-item:nth-child(5){
+    background-color: rgb(102, 213, 96);
+}.STR-grid-item:nth-child(6){
+    background-color: rgb(57, 255, 0);
+}.STR-grid-item:nth-child(7){
+    background-color: rgb(31, 62, 53);
+}
+.STR-grid-float{
+    /* display: inline; */
+}
+.STR-grid-item-float:first-child{
+    float: right;
+    background-color: rgb(255, 200, 0);
+    width: 30%;
+    height: 100%;
+}.STR-grid-item-float:last-child{
+    /* float: right; */
+    width: 70%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+}
+.STR-grid-flexbox{
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+}
+.STR-grid-item-flex:first-child{
+    background-color: rgb(6, 183, 135);
+    width: 100%;
+    height: 100%;
+}.STR-grid-item-flex:last-child{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(1, 234, 5);
+}
+.STR-grid-flex-row{
+    display: flex;
+    flex-direction: row;
+}
+.STR-grid-item-flexitem:first-child{
+    background-color: rgb(58, 51, 61);
+    width: 100%;
+    height: 100%;
+}.STR-grid-item-flexitem:last-child{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(212, 14, 14);
+}
+@media screen and (min-width: 1200px) {
+    
+.STR-grid-wrapper{
+    grid-template-areas: "a a a b"
+                         "c c c b"
+                         "d d d d";
+}
+  }
+
+  @media screen and (min-width: 950px) and (max-width: 1200px) {
+  
+.STR-grid-wrapper{
+    grid-template-areas: "a a a b"
+                         "c c c b"
+                         "d d d d";
+}
+  }
+
+  @media screen and (min-width: 750px) and (max-width: 950px) {
+   
+.STR-grid-wrapper{
+    grid-template-areas: "a a a b"
+                         "c c c b"
+                         "d d d d";
+}
+  }
+  @media screen and (min-width: 500px) and (max-width: 750px) {
+   
+.STR-grid-wrapper{
+    grid-template-areas: "a a a "
+                         "b b b "
+                         "c c c "
+                         "c c c "
+                         "d d d ";
+}
+
+  }
+  @media screen and (max-width: 500px) {
+    
+.STR-grid-wrapper{
+    grid-template-areas: "a a a "
+                         "b b b "
+                         "c c c "
+                         "c c c "
+                         "d d d ";
+}
+.STR-grid-flex-row {
+    display: flex;
+    flex-direction: column;
+}
+  }
+      
