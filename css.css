@@ -1,66 +1,141 @@
-body{ font-family:arial; padding:20px; }
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.grid_wrapper{
+    display: grid;
+    height: 100vh;
+}
+.item{
+    border: 1px solid #eee;
+}
+.grid_item{
+    width: 100%;
+    min-height: 100px;
+    height: 100%;
+    padding: 3px;
+}
+.grid_item:nth-child(1){
+    grid-area: a;
+    background-color: #3683f6;
+}.grid_item:nth-child(2){
+     grid-area: b;
+     background-color: rgb(121, 113, 113);
+ }.grid_item:nth-child(3){
+      height: 100%;
+      grid-area: c;
+      background-color: rgb(255, 255, 255);
+  }.grid_item:nth-child(4){
+       grid-area: d;
+       background-color: rgb(250, 97, 7);
+   }.grid_item:nth-child(5){
+        background-color: rgb(104, 255, 0);
+    }.grid_item:nth-child(6){
+         background-color: rgb(169, 145, 67);
+     }.grid_item:nth-child(7){
+          background-color: rgb(228, 135, 118);
+      }
+.grid_float{
+    /*
+    Color inline Bum
+     */
 
-.flex{
+}
+.grid_item_float:first-child{
+    float: right;
+    background-color: rgb(255, 214, 0);
+    width: 30%;
+    height: 100%;
+}.grid_item_float:last-child{
+     /* float: right; */
+     width: 70%;
+     height: 100%;
+     background-color: rgb(0, 0, 0);
+ }
+.grid_flexbox{
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    min-height: 200px;
+}
+.grid_item_flex:first-child{
+    background-color: rgb(250, 250, 250);
+    width: 100%;
+    height: 100%;
+}.grid_item_flex:last-child{
+     width: 100%;
+     height: 100%;
+     background-color: rgb(80, 239, 1);
+ }
+.grid_flex_row{
+    display: flex;
+    flex-direction: row;
+}
+.grid_item_flexitem:first-child{
+    background-color: rgb(0, 245, 245);
+    width: 100%;
+    height: 100%;
+}.grid_item_flexitem:last-child{
+     width: 100%;
+     height: 100%;
+     background-color: rgb(248, 122, 122);
+ }
 
-    max-width: 700px;
-    margin: 0 auto;
+
+
+ /*
+  Add bulding structure
+  */
+
+@media screen and (min-width: 1200px) {
+
+    .grid_wrapper{
+        grid-template-areas: "a a a b"
+                         "c c c b"
+                         "d d d d";
+    }
 }
 
-.item_D_Blue{
-    flex:1 1 calc(33.33% - 30px);
-    margin:5px;
-    box-sizing:border-box;
-    min-width:170px;
+@media screen and (min-width: 950px) and (max-width: 1200px) {
 
-    padding:50px 20px; font-size:400%; text-align:center; background: #0015ff;
+    .grid_wrapper{
+        grid-template-areas: "a a a b"
+                         "c c c b"
+                         "d d d d";
+    }
 }
-.item_Blue{
-    flex:1 1 calc(33.33% - 30px);
-    margin:5px;
-    box-sizing:border-box;
-    min-width:170px;
 
-    padding:50px 20px; font-size:400%; text-align:center; background: #00b5ff;
-}
-.item_Pink{
-    flex:1 1 calc(33.33% - 30px);
-    margin:5px;
-    box-sizing:border-box;
-    min-width:170px;
+@media screen and (min-width: 750px) and (max-width: 950px) {
 
-    padding:50px 20px; font-size:400%; text-align:center; background: #ff4c84;
+    .grid_wrapper{
+        grid-template-areas: "a a a b"
+                         "c c c b"
+                         "d d d d";
+    }
 }
-.item_Green{
-    flex:1 1 calc(33.33% - 30px);
-    margin:5px;
-    box-sizing:border-box;
-    min-width:170px;
+@media screen and (min-width: 500px) and (max-width: 750px) {
 
-    padding:50px 20px; font-size:400%; text-align:center; background: #3aff00;
-}
-.item_Grey{
-    flex:1 1 calc(33.33% - 30px);
-    margin:5px;
-    box-sizing:border-box;
-    min-width:170px;
+    .grid_wrapper{
+        grid-template-areas: "a a a "
+                         "b b b "
+                         "c c c "
+                         "c c c "
+                         "d d d ";
+    }
 
-    padding:50px 20px; font-size:400%; text-align:center; background: #7b8698;
 }
-.item_Orange{
-    flex:1 1 calc(33.33% - 30px);
-    margin:5px;
-    box-sizing:border-box;
-    min-width:170px;
+@media screen and (max-width: 500px) {
 
-    padding:50px 20px; font-size:400%; text-align:center; background: #fa6107;
+    .grid_wrapper{
+        grid-template-areas: "a a a "
+                         "b b b "
+                         "c c c "
+                         "c c c "
+                         "d d d ";
+    }
+    .grid_flex_row {
+        display: flex;
+        flex-direction: column;
+    }
 }
-.item_Yellow{
-    flex:1 1 calc(33.33% - 30px);
-    margin:5px;
-    box-sizing:border-box;
-    min-width:170px;
-
-    padding:50px 20px; font-size:400%; text-align:center; background: #ffdd00;
-}
+    

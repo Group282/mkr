@@ -1,23 +1,27 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css.css">
     <title>Document</title>
-    <link href="../mkrs/css.css" rel="stylesheet">
 </head>
 <body>
-
-<div class="flex">
-    <div class="item_D_Blue">D Blue</div>
-    <div class="item_Blue">Blue</div>
-    <div class="item_Pink">Pink</div>
-    <div class="item_Green">Green</div>
-    <div class="item_Yellow">Yellow</div>
-    <div class="item_Grey">Grey</div>
-    <div class="item_Orange">Orange</div>
+<div class="grid_wrapper">
+    <div class="item grid_item"></div>
+    <div class="item grid_item"></div>
+    <div class="item grid_item grid-float">
+        <div class="item  grid_item_float"></div>
+        <div class="item  grid_item_float grid_flexbox">
+            <div class="item grid_item_flex grid_flex_row">
+                <div class="item grid_item_flexitem"></div>
+                <div class="item grid_item_flexitem"></div>
+            </div>
+            <div class="item grid_item_flex"></div>
+        </div>
+    </div>
+    <div class="item grid_item"></div>
 </div>
 </body>
 </html>
