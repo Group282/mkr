@@ -29,7 +29,7 @@
 
 ## Test 3:
 
-> Create simple timer web app
+> Create simple web app
 
 ### Acceptance criteria:
 
@@ -106,7 +106,6 @@ description: <description>
 
 ### Acceptance criteria
 
-* Use different files for different methodology
 * Use css media queries
 * Use css variables
 * Markups must be adaptive and responsive according to design
@@ -117,7 +116,6 @@ description: <description>
 
 ### Acceptance criteria
 
-* Use different files for different methodology
 * Use css media queries
 * Use css variables
 * Markups must be adaptive and responsive according to design
@@ -128,7 +126,6 @@ description: <description>
 
 ### Acceptance criteria
 
-* Use different files for different methodology
 * Use css media queries
 * Use css variables
 * Markups must be adaptive and responsive according to design
