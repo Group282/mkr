@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <form action="post">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name">
+        <label for="surname">Surname:</label>
+        <input type="text" name="surname" id="surname">
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email">
+        <div>
+            <p>Gender: </p>
+            <label for="gender_m">Male</label>
+            <input type="radio" id="gender_m" name="gender" checked>
+            <label for="gender_f">Female</label>
+            <input type="radio" name="gender" id="gender_f">
+        </div>
+        <label for="desc">Description:</label>
+        <input type="text" name="desc" id="desc">
+        <input type="submit" id="submit">
+    </form>
+    <div id="demo"></div>
+</div>
+
+<script>
+    let name = document.getElementById('name')
+    let surname = document.getElementById('surname')
+    let email = document.getElementById('email')
+    let desc = document.getElementById('desc')
+    name.addEventListener('focusout', (e) => {
+        if (name.value.match(/^[a-zA-Z]+$/)) {
+            name.style.border = '3px solid green'
+        } else {
+            name.style.border = '3px solid red'
+        }
+    })
+    surname.addEventListener('focusout', (e) => {
+        if (surname.value.match(/^[a-zA-Z]+$/)) {
+            surname.style.border = '3px solid green'
+        } else {
+            surname.style.border = '3px solid red'
+        }
+    })
+    email.addEventListener('focusout', (e) => {
+        if (email.value.match(/^[a-zA-Z]+$/)) {
+            email.style.border = '3px solid green'
+        } else {
+            email.style.border = '3px solid red'
+        }
+    })
+    desc.addEventListener('focusout', (e) => {
+        if (desc.value.match(/^[a-zA-Z]+$/)) {
+            desc.style.border = '3px solid green'
+        } else {
+            desc.style.border = '3px solid red'
+        }
+    })
+    let demo = document.getElementById('demo')
+    let button = document.getElementById('submit')
+    let el = document.createElement('p')
+    button.addEventListener('mouseover', (e) => {
+        if (name.style.borderColor === 'green' && surname.style.borderColor === 'green' && email.style.borderColor === 'green' && desc.style.borderColor === 'green') {
+            el.innerText = 'Form valid'
+            el.style.textAlign = 'center'
+            el.style.fontSize = '24px'
+            el.style.color = 'green'
+            document.body.appendChild(el)
+        }else{
+            el.innerHTML = ''
+        }
+
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+form{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 200px;
+    margin: 200px auto;
+}
+label{
+    margin-top: 15px;
+}
+.container{
+    width: 100%;
+}
+#submit{
+    margin-top: 20px;
+    height: 50px;
+    border-radius: 10px;
+    background: rgba(24,180,23,0.93);
+    font-size: 20px;
+}
