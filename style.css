@@ -1,4 +1,4 @@
-head
+header
 {
     background-color: blue;
     font-style:oblique ;
@@ -20,16 +20,19 @@ body
 }
 #display
 {
-    margin:100px 50px  50px  50px;
+    margin:100px 620px  50px  620px;
     border: 5px rgb(14, 11, 211) solid;
     font-size: 50px;
+    text-align: center;
+    border-radius: 100%;
 }
 button
 {
     font-size: 50px;
     border: 5px rgba(0, 4, 255, 0.781) solid;
-    border-radius: 5px ;
     margin: 20px 20px 50px 20px;
+    background-color: aqua;
+    border-radius: 50%;
 }
 footer
 {
