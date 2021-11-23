@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+  transition: all 1s ease;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.inner {
+  width: 100%;
+  height: 100%;
+}
+
+.inner.inn1 {
+  background-color: var(--bg1);
+}
+.inner.inn2 {
+  background-color: var(--bg2);
+}
+.inner.inn3 {
+  background-color: var(--bg3);
+}
+.inner.inn4 {
+  background-color: var(--bg4);
+}
+.inner.inn5 {
+  background-color: var(--bg5);
+}
+.inner.inn6 {
+  background-color: var(--bg6);
+}
+.inner.inn7 {
+  background-color: var(--bg7);
+}
