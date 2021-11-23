@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+</head>
+<style>
+    html {
+        height: 99%;
+    }
+    body {
+        height: 100%;
+        background-image: linear-gradient( to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+        color: #A8EB12;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+#date {
+    display: grid;
+    grid-template-columns: repeat(7, 62px);
+    grid-template-rows: repeat(2, 50px);
+    align-items: center;
+    margin: auto;
+    width: 400px;
+}
+.container {
+    margin: auto;
+    width: 500px;
+    position: relative;
+    top: 240px;
+}
+.number {
+    font-size: 40px;
+    text-align: center;
+}
+.text {
+    font-size: 20px;
+    text-align: center;
+}
+.able {
+    border: none;
+    width: 150px;
+    font-size: 17px;
+    color: #A8EB12;
+    background-color:#051937;
+    border-radius: 20px;
+    margin: 5px 10px;
+}
+.disabled {
+    background-color: rgb(132, 132, 160);  
+}
+.buttons {
+    display: flex;
+}
+input {
+    border: blue;
+    font-size: 17px;
+    width: 240px;
+    background-color:transparent;
+    appearance: none;
+}
+</style>
+
+<body>
+    <div class="container">
+        <div id="date">
+            <div id="days" class="number">00 </div>
+            <div class="number">: </div>
+            <div id="hours" class="number">00</div>
+            <div class="number">: </div>
+            <div id="minutes" class="number"> 00</div>
+            <div class="number">: </div>
+            <div id="seconds" class="number">00</div>
+            <div class="text">дней</div>
+            <div class="text"> </div>
+            <div class="text">часов</div>
+            <div class="text"> </div>
+            <div class="text">минут</div>
+            <div class="text"> </div>
+            <div class="text">секунд</div>
+        </div>
+        <div class="buttons">
+            <button id="timeToNYBtn" class="able"> посчитать время до нг</button>
+            <button id="submit" class="able">посчитать время до  </button>
+                <input type="date" name="inputDate" id="inputDate">
+
+                <button id="reset" class="able">Сбросить всё </button>
+        </div>
+    </div>
+</body>
+<script>
+    const dateField = document.getElementById('date')
+    const days = document.getElementById('days');
+    const hours = document.getElementById('hours');
+    const minutes = document.getElementById('minutes');
+    const seconds = document.getElementById('seconds');
+    const timeToNYBtn = document.getElementById('timeToNYBtn')
+    const inputDate = document.getElementById('inputDate');
+    const submit = document.getElementById('submit');
+    const reset = document.getElementById('reset');
+    timeToNYBtn.addEventListener('click',setTimer );
+    submit.addEventListener('click', setTimerToInputDate);
+    reset.addEventListener('click' , resetTimer);
+    let intervalToNY;
+    let intervalToInput;
+
+    
+    function setTimer() {
+        intervalToNY = setInterval(StartTimerToNY , 1*1000) 
+            timeToNYBtn.setAttribute('disabled','disabled')
+            timeToNYBtn.classList.add('disabled')
+            clearInterval(intervalToInput);
+            submit.removeAttribute('disabled','disabled')
+            submit.classList.remove('disabled')
+        }
+
+    function StartTimerToNY() {
+        const dateNow = new Date();
+        const NY = new Date(dateNow.getFullYear()+1, 0, 1);
+        const timeToNY = NY- dateNow
+        getTime(timeToNY)
+    }
+
+    function setTimerToInputDate() {
+        intervalToInput = setInterval(StartTimerToInputDate , 1*1000) 
+            submit.setAttribute('disabled','disabled')
+            submit.classList.add('disabled')
+            clearInterval(intervalToNY);
+            timeToNYBtn.removeAttribute('disabled','disabled')
+            timeToNYBtn.classList.remove('disabled')
+        }
+
+    function StartTimerToInputDate() {
+        const dateNow = new Date();
+        const TimeToInputDate = inputDate.valueAsNumber - dateNow
+        if (TimeToInputDate > 0 ) {
+        getTime(TimeToInputDate)
+        }
+    }
+
+    function getTime(timeAsNumber){
+        const milsecToDay = timeAsNumber/1000/60/60/24
+        let day = Math.floor(milsecToDay);
+        const hoursInDay = 24;
+        const hourNotInt = ((milsecToDay-day)*hoursInDay);
+        let hour = Math.floor(hourNotInt);
+        const minInHour = 60;
+        const minNotInt = ((hourNotInt-hour)*minInHour);
+        let min = Math.floor(minNotInt);
+        const secInMin = 60;
+        let sec =  Math.floor(((minNotInt-min)*secInMin));
+
+        if (day < 10) {
+            days.innerHTML = "0" + day;
+           }
+        if (day >= 10){
+            days.innerHTML = day;
+        }
+        if (day < 0){
+            days.innerHTML = day;
+        }
+        if (hour < 10) {
+            hours.innerHTML = "0" + hour;
+           }
+        if (hour >= 10) {
+            hours.innerHTML = hour;
+        }
+        if (min < 10) {
+            minutes.innerHTML = "0" + min;
+           }
+        if (min >= 10) {
+            minutes.innerHTML = min;
+        }
+        if (sec < 10) {
+            seconds.innerHTML = "0" + sec;
+           }
+        if (sec >= 10) {
+            seconds.innerHTML = sec;
+        }
+    }
+
+    function resetTimer() {
+            clearInterval(intervalToNY);
+            clearInterval(intervalToInput);
+             days.innerHTML ="00"
+             hours.innerHTML ="00"
+             minutes.innerHTML ="00"
+             seconds.innerHTML ="00"
+             timeToNYBtn.removeAttribute('disabled','disabled')
+             submit.removeAttribute('disabled','disabled')
+             submit.classList.remove('disabled')
+             timeToNYBtn.classList.remove('disabled')
+    }
+
+</script>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+</head>
+<style>
+    html {
+        height: 99%;
+    }
+    body {
+        height: 100%;
+        background-image:linear-gradient(to right top, #d16ba5,  #5ffbf1);
+        color: white;
+    }
+    .container {
+        margin: auto;
+        width: 400px;
+        position: relative;
+        top: 240px;
+    }
+    #clock {
+       margin: 11px 113px;
+    }
+    #start , #stop , #reset {
+        width: 110px;
+        margin-left: 10px;
+        height: 50px;
+        background-color: #5FFBF1;
+        border: navy;
+        border-radius: 10px;
+        font-size: 27px;
+        color: white;
+    }
+    #stop {
+        background-color: #D16BA5;
+    }
+    #reset {
+        background-color: #86A8E7;
+    }
+    span {
+        font-size: 44px;
+    }
+    p{
+        text-align: center;
+        font-size: 36px;
+    }
+</style>
+<body>
+    <div class="container"> 
+        <p>Timer</p>
+        <div id="clock">
+            <span id="min">00</span>:   <span id="sec">00</span>:   <span id="msec">00</span>
+        </div>
+        <button id="start"> Start</button>
+        <button id="stop">Stop</button>
+        <button id="reset">Reset</button>
+    </div>
+    <script>
+
+        const stopwatch = document.getElementById('clock')
+        let sec = 0;
+        let min = 0;
+        let msec = 0;
+        let interval;
+        const startBtn = document.getElementById('start')
+        const stopBtn = document.getElementById('stop')
+        const resetBtn = document.getElementById('reset')
+
+
+        const minutes = document.getElementById('min')
+        const seconds = document.getElementById('sec')
+        const milSeconds = document.getElementById('msec')
+
+
+        startBtn.addEventListener('click',setTimer)
+        stopBtn.addEventListener('click',stopTimer)
+        resetBtn.addEventListener('click',resetTimer)
+
+        function setTimer() {
+            interval = setInterval(StartTimer , 1*10) 
+            startBtn.setAttribute('disabled','disabled')
+        }
+
+        function stopTimer() {
+            clearInterval(interval);
+            startBtn.removeAttribute('disabled','disabled')
+        }
+
+        function resetTimer() {
+            clearInterval(interval);
+            sec = 0;
+            min = 0;
+            msec = 0;
+
+            milSeconds.innerHTML = "0" + msec;
+            seconds.innerHTML = "0" + sec;
+            minutes.innerHTML = "0" + min;
+            startBtn.removeAttribute('disabled','disabled')
+        }
+
+       function StartTimer() { 
+            msec++
+           if (msec < 10) {
+            milSeconds.innerHTML = "0" + msec;
+           }
+           if (msec >= 10) {
+            milSeconds.innerHTML =msec; 
+           }
+
+        if (msec > 99) {
+            msec = 0;
+           milSeconds.innerHTML = "0" + msec;
+           sec++ 
+           if (sec < 10) {
+            seconds.innerHTML = "0" + sec;
+           }
+           if (sec >= 10) {
+            seconds.innerHTML =sec; 
+           }
+       } if (sec > 59) {
+            sec = 0;
+            seconds.innerHTML = "0" + sec;
+           min++ 
+           if (min < 10) {
+            minutes.innerHTML = "0" + min;
+           }
+           if (min >= 10) {
+            minutes.innerHTML =min; 
+           }
+       }
+        }
+    </script>
+</body>
+</html>
