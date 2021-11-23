@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/>
+  <title>PZ_1_10</title>
+  <link rel="stylesheet" type="text/css" href="css/app.css">
+</head>
+<body>
+
+<header class="header">
+
+</header>
+
+<div class="main">
+
+  <div class="main_info">
+    <h1>I greet you!</h1>
+    <span> Please fill in all the fields correctly to pass verification </span>
+  </div>
+  <form class="main_input">
+
+    <label for="firstname">First Name</label>
+    <input type="text" id="firstname" class="" required>
+
+    <label for="lastname">Last Name</label>
+    <input type="text" id="lastname" class="" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" class="" required>
+
+    <label >Gender</label>
+
+
+    <div class="form_radio">
+      <input id="radio-1" type="radio" name="radio" value="1" checked>
+      <label for="radio-1">F</label>
+    </div>
+
+    <div class="form_radio">
+      <input id="radio-2" type="radio" name="radio" value="2">
+      <label for="radio-2">M</label>
+    </div>
+
+
+    <label for="description">Description:</label>
+    <input type="text" id="description" class="main_input-password">
+
+
+    <input type="button" class="main_input-submit" value="Sign up">
+
+    <h3 id="demo" style="display: none">You are verification</h3>
+
+  </form>
+
+</div>
+
+<footer class="header_and_footer">
+
+</footer>
+
+
+<script >
+  let firstname = document.querySelector('#firstname');
+  let lastname = document.querySelector('#lastname');
+  let email = document.querySelector('#email');
+  let description = document.querySelector('#description');
+  let regStr = /^[A-Za-z]+$/;
+  let regNum = /^\d+$/;
+  let list_flag = [false, false, false];
+  let demo = document.querySelector('#demo');
+  let button = document.querySelector('.main_input-submit');
+
+  firstname.addEventListener('keyup', (event) => {
+    isOnly(event, firstname, regStr, 0);
+  });
+
+  lastname.addEventListener('keyup', (event) => {
+    isOnly(event, lastname, regStr, 1);
+  });
+
+  email.addEventListener('keyup', (event) => {
+    isOnly(event, email, regStr, 2);
+  });
+
+  description.addEventListener('keyup', (event) => {
+    isOnly(event, description, regStr, 2);
+  });
+
+  function isOnly(event, element, reg, count) {
+    if (reg.test(event.target.value)) {
+      element.classList.remove("main_invalid");
+      element.classList.add("main_valid");
+      list_flag[count] = true;
+    } else {
+      element.classList.remove("main_valid");
+      element.classList.add("main_invalid");
+      list_flag[count] = false;
+    }
+  }
+
+  button.addEventListener('click', (event) => {
+    if(list_flag[0] && list_flag[1] && list_flag[2])
+      demo.style.display = "inline";
+
+    else alert("Error");
+  })
+</script>
+
+</body >
+
+
+</html>

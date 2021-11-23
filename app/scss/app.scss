@@ -1,0 +1,13 @@
+@import "variables";
+@import "reset";
+@import "media-query";
+@import "blocks/header";
+@import "blocks/main";
+
+body {
+  font: {
+    family: sans-serif;
+    size: 40px;
+  }
+  color: $white;
+}

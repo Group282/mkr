@@ -1,0 +1,121 @@
+.main {
+  background: $secondary_color;
+  width: 100%;
+  height: 96vh;
+  display: flex;
+  justify-content: space-around;
+
+  &_valid{
+    border: 4px solid green;
+  }
+
+  &_invalid{
+    border: 4px solid red;
+  }
+
+
+  &_info {
+    width: 45%;
+    padding-top: 10vh;
+    text-align: center;
+
+    h1 {
+      font-size: 36px;
+    }
+
+    span {
+      display: block;
+      margin-right: auto;
+      margin-left: auto;
+      margin-top: 20px;
+      width: 70%;
+      font-weight: lighter;
+      color: $text_color_grey;
+    }
+
+
+
+
+    mark{
+      color: $white;
+      background-color: transparent;
+    }
+
+  }
+
+  &_input {
+    width: 30%;
+    background: $color_registration;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10vw;
+    height: max-content;
+    padding: 5vh 50px 5vw;
+    margin-top: 5vw;
+    color: $text_color_balck;
+
+
+
+    label {
+      margin-bottom: 5px;
+    }
+
+    &-firstname {
+      height: 25px;
+      margin-bottom: 20px;
+      border: {
+        width: 1px;
+        color: $l_grey;
+        radius: 5px;
+      }
+    }
+
+    &-email {
+      height: 25px;
+      margin-bottom: 20px;
+      border: {
+        width: 1px;
+        color: $l_grey;
+        radius: 5px;
+      }
+    }
+
+    &-lastname {
+      height: 25px;
+      margin-bottom: 20px;
+      border: {
+        width: 1px;
+        color: $l_grey;
+        radius: 5px;
+      }
+    }
+
+    &-submit {
+      height: 60px;
+      font-size: 16px;
+      background: $registration_color;
+      border: none;
+      margin-top: 20px;
+      margin-bottom: 30px;
+      border-radius: 5px;
+      color: $text_color_white;
+
+      &:hover {
+        cursor: pointer;
+        background: $registration_color;
+      }
+    }
+
+    span {
+      color: $l_grey;
+      font-size: 14px;
+    }
+
+    a{
+      color: $href_color;
+      text-decoration: none;
+    }
+
+  }
+}
