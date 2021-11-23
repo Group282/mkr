@@ -1,0 +1,25 @@
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background: #d0d315;
+    }
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#value-counter{
+    font-size: 50px;
+}
+
+.buttons-section button{
+    padding: 6px 12px;
+    cursor: pointer;
+    background-color: #120991;
+    color: #fff;
+}
